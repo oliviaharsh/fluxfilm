@@ -32,7 +32,6 @@ fluxfilm/
 
 1. `hostinger/config.php` holds live secrets and is **gitignored**. Never commit it.
 2. **Rotate the keys** that were previously stored in plain text (treat as leaked):
-   - the OpenAI API key
    - the `API_KEY` shared secret (update it in `config.php` **and** the Apps Script SETTINGS)
 3. In `apps-script/TelegramAdmin.gs`, `tg_isAllowed_()` currently `return true` (allows
    anyone). Lock it to your admin chat ID before exposing the bot.
