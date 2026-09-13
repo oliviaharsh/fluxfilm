@@ -80,7 +80,6 @@ function doPost(e){
       ping: ping,
       getBootstrap: getBootstrap,
       getFaqs: getFaqs,
-      fluxyChat: fluxyChat,
       createOrder: createOrder,
       validateCoupon: validateCoupon,
       verifyPayment: verifyPayment,

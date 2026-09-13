@@ -134,25 +134,5 @@ if (in_array($action, $CACHEABLE) && $res) {
   file_put_contents($CACHE_DIR . $action . '.json', $res);
 }
 
-// ── AI proxy ──
-if (isset($body["anthropic_proxy"]) && $body["anthropic_proxy"] === true) {
-  $OPENAI_KEY = $CONFIG['OPENAI_KEY'];
-  $ch2 = curl_init("https://api.openai.com/v1/chat/completions");
-  curl_setopt_array($ch2, [
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST => true,
-    CURLOPT_HTTPHEADER => [
-      "Content-Type: application/json",
-      "Authorization: Bearer " . $OPENAI_KEY
-    ],
-    CURLOPT_POSTFIELDS => json_encode($body["anthropic_payload"]),
-    CURLOPT_TIMEOUT => 30,
-  ]);
-  $res2 = curl_exec($ch2);
-  curl_close($ch2);
-  echo $res2;
-  exit;
-}
-
 http_response_code($code ?: 200);
 echo $res;

@@ -8,6 +8,5 @@
 return [
   'API_KEY'         => 'CHANGE_ME_shared_secret',
   'APPS_SCRIPT_URL' => 'https://script.google.com/macros/s/XXXXXXXX/exec',
-  'OPENAI_KEY'      => 'sk-proj-CHANGE_ME',
   'CACHE_CLEAR_KEY' => 'CHANGE_ME_cache_key',
 ];
